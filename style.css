@@ -1,0 +1,257 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(92, 138, 110);
+    text-align: center;
+    text-decoration: solid;
+    padding: 40px;
+    padding-bottom: 80px; 
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(78, 116, 80); 
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header nav {
+    margin: 0;
+    padding: 15px 0;
+}
+
+main {
+    margin-top: 90px; 
+    color: bisque;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+main img{
+
+    max-width: 100%;
+    height: auto;
+
+}
+
+main h1 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    color: bisque;
+}
+
+/* Tagline under the main title */
+.tagline {
+    color: bisque;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+/* Service boxes */
+.services {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 14px 0 18px 0;
+}
+.service {
+    background: rgba(255,255,255,0.04);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: bisque;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Intro paragraph and quote */
+.intro {
+    color: bisque;
+    max-width: 760px;
+    margin: 18px auto;
+    font-size: 16px;
+}
+.quote {
+    color: bisque;
+    margin-top: 12px;
+    font-style: italic;
+    opacity: 0.95;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(56, 90, 64); 
+    color: bisque; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+nav {
+    margin-bottom: 50px;
+    background-color: rgb(78, 116, 80);
+    text-align: center;
+    
+}
+
+nav a {
+    margin: 0 15px;
+    color: rgb(78, 116, 80);
+}
+
+nav a {
+    color: bisque;
+}
+
+/* Page smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Carousel layout: compact horizontal thumbnails */
+.carousels {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+}
+
+.carousel {
+    max-width: 760px; /* overall carousel width */
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    background: transparent;
+    padding: 8px 12px;
+    box-sizing: border-box;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 0; /* no gaps between slides */
+    overflow-x: auto; /* allow horizontal scrolling */
+    overflow-y: hidden;
+    align-items: stretch;
+    /* optionally allow smooth scrolling if JS not present */
+    scroll-behavior: smooth; /* smooth when programmatically scrolled */
+    scroll-snap-type: x mandatory; /* snap to slides */
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-slide {
+    flex: 0 0 auto; /* width determined by image */
+    display: block;
+    scroll-snap-align: start;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0; /* no rounding so edges meet */
+    box-shadow: none; /* remove gap-looking shadows */
+    margin: 0;
+}
+
+/* Prev/Next buttons */
+.carousel .prev,
+.carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.45);
+    color: #fff;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+.carousel .prev { left: 8px; }
+.carousel .next { right: 8px; }
+.carousel .prev:focus,
+.carousel .next:focus { outline: 2px solid bisque; }
+
+/* Dots container */
+.carousel .dots {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+.carousel .dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.35);
+    cursor: pointer;
+}
+.carousel .dots button.active { background: bisque; }
+
+/* Optional: hide native scrollbars for WebKit and Firefox */
+.carousel-track::-webkit-scrollbar { height: 8px; }
+.carousel-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 4px; }
+.carousel-track { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.12) transparent; }
+
+/* Instagram link: match surrounding text color */
+.insta-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.insta-link:hover { text-decoration: underline; opacity: 0.95; }
+
+/* Full-width page images used on About/Contact pages */
+.page-image {
+    width: 100%;
+    max-width: 920px;
+    height: auto;
+    display: block;
+    margin: 18px auto 8px auto;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* Smaller variants and crop helpers */
+.page-image--small {
+    max-width: 480px; /* much smaller */
+    width: 90%;
+    height: 200px; /* fixed height so image is cropped to fit */
+    object-fit: cover;
+    display: block;
+    margin: 12px auto;
+}
+
+/* Crop the image to show the top area and hide the bottom */
+.page-image.crop-top {
+    object-position: top center; /* show top; crop bottom */
+    height: 160px; /* increase/decrease to crop more/less */
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .carousel {
+        max-width: 100%;
+        padding: 6px;
+    }
+    .carousel-slide { flex: 0 0 140px; }
+    .carousel-slide img { height: 112px; }
+}
